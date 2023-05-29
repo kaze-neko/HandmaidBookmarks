@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SimpleBookmark</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- TODO : js-function that will process all objects marked with special tag -->
+  <!-- TODO : editing bookmarks -->
+  <main>
+    <aside id="tags">
+      <p id="tags-title" class="header-element">Your Tags</p>
+      <!-- ! Generated tags will be here -->
+      <!-- <input type="checkbox" id="tag1" class="tag-checkbox hidden"> -->
+      <!-- <label for="tag1" class="tag border">Testing Test</label> -->
+    </aside>
+    <section id="bookmarks">
+      <div id="bookmarks-header">
+        <p id="bookmarks-header-title" class="header-element">Your Bookmarks</p>
+        <button id="bookmarks-header-create-button" class="border-small">+</button>
+      </div>
+      <div id="bookmarks-content">
+        <!-- ! Generated bookmarks will be here -->
+        <!-- <div id="bookmark-ID_1" class="bookmark"> -->
+          <!-- <a id="bookmark-title-ID_1" class="bookmark-title border">Test my bookmarking manager, please!</a> -->
+          <!-- <p id="bookmark-tags-ID_1" class="bookmark-tags border-small">Tags</p> -->
+          <!-- <button id="bookmark-delete-ID_1" class="bookmark-remove-button border-small">X</button> -->
+        <!-- </sdiv> -->
+        <div id="bookmark-new" class="hidden">
+            <input id="bookmark-new-title" type="text" class="border" placeholder="Title">
+            <input id="bookmark-new-tags" type="text" class="border" placeholder="First_tag, second_tag, ...">
+            <input id="bookmark-new-url" type="text" class="border" placeholder="URL">
+            <button id="bookmark-new-save" class="border-small">Save</button>
+            <button id="bookmark-new-cancel" class="border-small">Cancel</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="scripts/style-script.js"></script>
+  <script src="scripts/script.js"></script>
+</body>
+</html>

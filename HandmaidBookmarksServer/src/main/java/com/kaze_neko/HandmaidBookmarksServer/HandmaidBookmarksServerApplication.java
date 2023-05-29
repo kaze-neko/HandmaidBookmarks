@@ -1,21 +1,25 @@
 package com.kaze_neko.HandmaidBookmarksServer;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 @SpringBootApplication
 public class HandmaidBookmarksServerApplication {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, URISyntaxException {
 		SpringApplication.run(HandmaidBookmarksServerApplication.class, args);
+		Bookmark bookmark = new Bookmark();
+		bookmark.setId(0);
+		bookmark.setTitle("Meow! All the bookmarks will be displayed here /ᐠ｡ꞈ｡ᐟ\\");
+		bookmark.setUrl("http://localhost:8080/HandmaidBookmarks/server/bookmarks/");
+		bookmark.setTags(new ArrayList<>(Arrays.asList("start")));
+		BookmarkService bookmarkService = new BookmarkService();
+		bookmarkService.save(bookmark);
 	}
 
 }

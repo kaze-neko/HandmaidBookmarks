@@ -1,0 +1,197 @@
+:root { 
+  --REGULAR_BACKGROUND_COLOR: #F4F4F4;
+  --LIGHT_FONT_COLOR: #F4F4F4;
+  --REGULAR_BORDER_COLOR: #888888;
+  --FOCUS_BORDER_COLOR: #444444;
+  --HEAD_ELEMENT_BACKGROUND_COLOR: #444444;
+  --HEAD_ELEMENT_BORDER_COLOR: #444444;
+  --SELECTED_ELEMENT_BACKGROUND_COLOR: #FAB005;
+  --CREATE_BUTTON_BACKGROUND_COLOR: #40985e;
+  --REMOVE_BUTTON_BACKGROUND_COLOR: #e55d4d;
+  /* --SELECTED_ELEMENT_BACKGROUND_COLOR: #f0dab1; */
+  /* --CREATE_BUTTON_BACKGROUND_COLOR: #93d4b5; */
+  /* --REMOVE_BUTTON_BACKGROUND_COLOR: #e39aac; */
+  --TAGS_ELEMENT_BACKGROUND_COLOR: #DDDDDD;
+}
+
+/* basic configuration */
+* {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: Indie Flower;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* class to auto-generate hand-drawn border  */
+.border {
+  border-style: solid;
+  border-width: 5px 25px;
+}
+/* class to auto-generate hand-drawn border for elements with small width  */
+.border-small {
+  border-style: solid;
+  border-width: 5px 5px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  padding-top: 50px;
+  padding-bottom: 50px;
+  /* background-color: var(--REGULAR_BACKGROUND_COLOR); */
+  background-image: url("../resources/output-onlinepngtools.png");
+  background-size: cover;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1000px; /* main_width = tags(aside) + gap + bookmarks(section) = 250 + 25 + 725*/
+}
+
+/* header elements used as titles for different containers */
+.header-element {
+  font-weight: 600;
+  color: var(--REGULAR_BACKGROUND_COLOR);
+}
+
+/* styles for aside container with all tags */
+#tags {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin-right: 25px; /* gap between tags and bookmarks*/
+}
+
+#tags * {
+  margin-bottom: 5px;
+  width: 100%;
+  height: 40px;
+  line-height: 30px;
+  border-radius: 10px;
+}
+
+
+#tags-title {
+  margin-bottom: 15px;
+  line-height: 40px;
+}
+
+input:checked + label {
+  background-color: var(--SELECTED_ELEMENT_BACKGROUND_COLOR);
+}
+
+#bookmarks {
+  display: flex;
+  flex-direction: column;
+  width: 725px;
+}
+
+#bookmarks-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+#bookmarks-header * {
+  height: 40px;
+  line-height: 30px;
+  border-radius: 10px;
+}
+
+#bookmarks-header-title {
+  width: calc(100% - 110px); /* width = 100% - (gap + tags + gap + remove button) = 100% - 5px - 60px - 5px - 40px */
+  line-height: 40px;
+}
+
+#bookmarks-header-create-button {
+  width: 105px; /* width = tag + gap + button = 60 + 5 + 40 */
+  background-color: var(--CREATE_BUTTON_BACKGROUND_COLOR);
+}
+
+#bookmarks-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookmark {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.bookmark * {
+  height: 40px;
+  line-height: 30px;
+  border-radius: 10px;
+}
+
+.bookmark-title {
+  width: calc(100% - 110px); /* 110px = gap + tags + gap + remove button = 5 + 60 + 5 + 40 */
+  text-align: start;
+}
+
+.bookmark-tags {
+  width: 60px;
+  background-color: var(--TAGS_ELEMENT_BACKGROUND_COLOR);
+}
+
+.bookmark-remove-button {
+  width: 40px;
+  background-color: var(--REMOVE_BUTTON_BACKGROUND_COLOR);
+}
+
+#bookmark-new {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#bookmark-new * {
+  height: 40px;
+  width: 725px;
+  line-height: 30px;
+  margin-bottom: 5px;
+  background-color: var(--TAGS_ELEMENT_BACKGROUND_COLOR);
+  border-radius: 10px;
+  text-align: start;
+}
+
+::placeholder {
+  color: #444444;
+}
+
+#bookmark-new-save {
+  width: 105px;
+  margin-right: 5px;
+  text-align: center;
+  background-color: var(--CREATE_BUTTON_BACKGROUND_COLOR);
+}
+
+#bookmark-new-cancel {
+  width: 105px;
+  text-align: center;
+  background-color: var(--REMOVE_BUTTON_BACKGROUND_COLOR);
+}

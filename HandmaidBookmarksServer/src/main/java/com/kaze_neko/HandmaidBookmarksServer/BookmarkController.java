@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +17,7 @@ public class BookmarkController {
     @Autowired
     BookmarkService bookmarkService;
     @GetMapping
-    public List<Bookmark> getAll(@RequestParam(required = false) Optional<String[]> tags) throws IOException {
+    public List<Bookmark> getAll(@RequestParam(required = false) Optional<String[]> tags) throws IOException, URISyntaxException {
         if (tags.isEmpty()) { return bookmarkService.getAll(); }
         List<Bookmark> bookmarks = bookmarkService.getAll();
         List<Bookmark> suitableBookmarks = new ArrayList<>();
@@ -26,11 +27,11 @@ public class BookmarkController {
         return suitableBookmarks;
     }
     @GetMapping("tags")
-    public List<String> getAllTags() throws IOException {
+    public List<String> getAllTags() throws IOException, URISyntaxException {
         return bookmarkService.getAllTags();
     }
     @PostMapping
-    public Bookmark create(@RequestBody Bookmark bookmark) throws IOException {
+    public Bookmark create(@RequestBody Bookmark bookmark) throws IOException, URISyntaxException {
         return bookmarkService.save(bookmark);
     }
     @DeleteMapping("/{id}")
